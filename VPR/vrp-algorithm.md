@@ -41,7 +41,6 @@ Issue? ALNS is potentially too slow to meet the stochastic demands of short-deli
 
 >Interestingly, the literature seems to say that giving defined delivery windows can reduce cost. One benefit is in reducing failed deliveries, a huge cost overhead in repeated deliveries (Ozarik et al. 2021)
 
-From the literature, I prefer the theoretical ESI algorithm proposed by Zeng et al. 2019.
 
 ### VRP Definitions
 
@@ -60,7 +59,6 @@ There is a set of couriers, C, all assigned n orders. (Although couriers are ela
 
 **Route** List of the *sequential* orders assigned to a driver.
 
-
 ### VRP Constraints
 
 - Each route must be practicable
@@ -72,7 +70,9 @@ There is a set of couriers, C, all assigned n orders. (Although couriers are ela
 
 ### Insertion algorithm
 
-The general idea is to assign adaptive travel budgets to drivers and then break the routes for each driver up into segments. With the idea a courier completes as many deliveries close to them when their travel budget is small and helps other drivers when the travel budget is large.
+From the literature, I found this theoretical ESI algorithm proposed by Zeng et al. 2019.
+
+The general idea is to assign adaptive travel budgets to drivers and then break the routes for each driver up into segments. With the idea a driver completes as many deliveries close to them when their travel budget is small and helps other drivers when the travel budget is large.
 
     LRP-ESI-algorithm(orders O, drivers D, travel_budget_parameter *p*):
       Orders_unassigned (new orders that are not assigned)
